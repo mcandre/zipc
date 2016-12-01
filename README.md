@@ -4,7 +4,7 @@
 
 ```
 $ zipc -C bin zipc-0.0.1.zip zipc-0.0.1"
-$ zipc -h
+
 $ zipc -h
 Usage:
   zipc [-C <chdir>] <archive> <source>...
