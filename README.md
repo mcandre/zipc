@@ -31,7 +31,13 @@ Usage:
 
 More examples:
 
+* [go-chop](https://github.com/mcandre/go-chop)
+* [go-hextime](https://github.com/mcandre/go-hextime)
 * [go-ios7crypt](https://github.com/mcandre/go-ios7crypt)
+* [go-rotate](https://github.com/mcandre/go-rotate)
+* [go-swatch](https://github.com/mcandre/go-swatch)
+* [go/forkbomb](https://github.com/mcandre/forkbombs/tree/master/go/forkbomb)
+* [karp](https://github.com/mcandre/karp)
 
 # DOWNLOAD
 
