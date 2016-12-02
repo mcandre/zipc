@@ -49,10 +49,8 @@ https://github.com/mcandre/goport/releases
 
 ## Optional
 
-* [Git](https://git-scm.com)
-* [Make](https://www.gnu.org/software/make/)
-* [Bash](https://www.gnu.org/software/bash/)
-* [findutils](https://www.gnu.org/software/findutils/)
+* [coreutils](https://www.gnu.org/software/coreutils/coreutils.html)
+* [make](https://www.gnu.org/software/make/)
 * [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) (e.g. `go get golang.org/x/tools/cmd/goimports`)
 * [gox](https://github.com/mitchellh/gox) (e.g. `go get github.com/mitchellh/gox`)
 
