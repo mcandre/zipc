@@ -53,6 +53,8 @@ https://github.com/mcandre/goport/releases
 * [make](https://www.gnu.org/software/make/)
 * [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) (e.g. `go get golang.org/x/tools/cmd/goimports`)
 * [gox](https://github.com/mitchellh/gox) (e.g. `go get github.com/mitchellh/gox`)
+* [shlint](https://rubygems.org/gems/shlint)
+* [shellcheck](http://hackage.haskell.org/package/ShellCheck)
 
 # INSTALL FROM REMOTE GIT REPOSITORY
 
