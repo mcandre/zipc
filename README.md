@@ -41,7 +41,7 @@ More examples:
 
 # DOWNLOAD
 
-https://github.com/mcandre/goport/releases
+https://github.com/mcandre/zipc/releases
 
 # REQUIREMENTS
 
