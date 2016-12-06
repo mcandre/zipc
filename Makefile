@@ -1,3 +1,4 @@
+APP=zipc
 VERSION=0.0.1
 
 .PHONY: port clean clean-ports
@@ -7,8 +8,8 @@ all: integration-test
 integration-test: port
 
 port: bin
-	zipc -C bin "zipc-$(VERSION).zip" "zipc-$(VERSION)"
-	unzip -l "bin/zipc-$(VERSION).zip"
+	zipc -C bin "$(APP)-$(VERSION).zip" "$(APP)-$(VERSION)"
+	unzip -l "bin/$(APP)-$(VERSION).zip"
 
 bin:
 	gox -output="bin/{{.Dir}}-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd/...

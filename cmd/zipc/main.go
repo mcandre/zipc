@@ -9,7 +9,7 @@ import (
 )
 
 const Usage = `Usage:
-  zipc [-C <chdir>] <archive> <source>...
+  zipc [options] <archive> <source>...
   zipc -h --help
   zipc -v --version
 
