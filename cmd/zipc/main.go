@@ -22,11 +22,7 @@ const Usage = `Usage:
     -v --version  Show version information`
 
 func main() {
-	arguments, err := docopt.Parse(Usage, nil, true, zipc.Version, false)
-
-	if err != nil {
-		panic(Usage)
-	}
+	arguments, _ := docopt.Parse(Usage, nil, true, zipc.Version, false)
 
 	directory, _ := arguments["-C"].(string)
 
