@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 
 	"github.com/docopt/docopt-go"
@@ -27,7 +28,11 @@ func main() {
 	directory, _ := arguments["-C"].(string)
 
 	if directory != "" {
-		os.Chdir(directory)
+		err := os.Chdir(directory)
+
+		if err != nil {
+			log.Panic(err)
+		}
 	}
 
 	archivePath, _ := arguments["<archive>"].(string)
@@ -35,10 +40,23 @@ func main() {
 	sourceRoots, _ := arguments["<source>"].([]string)
 
 	archive := new(archivex.ZipFile)
-	archive.Create(archivePath)
-	defer archive.Close()
+	err := archive.Create(archivePath)
+
+	if err != nil {
+		log.Panic(err)
+	}
+
+	defer func() {
+		if err := archive.Close(); err != nil {
+			log.Panic(err)
+		}
+	}()
 
 	for _, source := range sourceRoots {
-		archive.AddAll(source, true)
+		err := archive.AddAll(source, true)
+
+		if err != nil {
+			log.Panic(err)
+		}
 	}
 }
