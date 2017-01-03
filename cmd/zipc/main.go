@@ -1,3 +1,4 @@
+// Package main provides a zipc executable for creating ZIP archives with a specified current working directory.
 package main
 
 import (
@@ -9,6 +10,7 @@ import (
 	"github.com/mcandre/zipc"
 )
 
+// Usage is a docopt-formatted specification of this application's command line interface.
 const Usage = `Usage:
   zipc [options] <archive> <source>...
   zipc -h --help
@@ -22,6 +24,7 @@ const Usage = `Usage:
     -h --help     Show usage information
     -v --version  Show version information`
 
+// main is the entrypoint for this application.
 func main() {
 	arguments, _ := docopt.Parse(Usage, nil, true, zipc.Version, false)
 
