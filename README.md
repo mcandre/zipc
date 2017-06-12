@@ -1,4 +1,4 @@
-# zipc - like zip, but with a -C <chdir> option
+# zipc - like zip, but with a -chdir option
 
 # EXAMPLE
 
