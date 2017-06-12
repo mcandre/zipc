@@ -5,15 +5,15 @@
 ```
 $ mkdir -p bin
 
-$ zipc -chdir bin zipc-0.0.1.zip zipc-0.0.1
+$ zipc -chdir bin zipc-0.0.2.zip zipc-0.0.2
 
-$ unzip -l bin/zipc-0.0.1.zip
-Archive:  bin/zipc-0.0.1.zip
+$ unzip -l bin/zipc-0.0.2.zip
+Archive:  bin/zipc-0.0.2.zip
   Length      Date    Time    Name
 ---------  ---------- -----   ----
-        0  12-01-2016 22:25   zipc-0.0.1/darwin/
-        0  12-01-2016 22:25   zipc-0.0.1/darwin/386/
-  2020040  12-01-2016 22:25   zipc-0.0.1/darwin/386/zipc
+        0  12-01-2016 22:25   zipc-0.0.2/darwin/
+        0  12-01-2016 22:25   zipc-0.0.2/darwin/386/
+  2020040  12-01-2016 22:25   zipc-0.0.2/darwin/386/zipc
 ...
 
 $ zipc -help
