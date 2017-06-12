@@ -3,7 +3,9 @@
 # EXAMPLE
 
 ```
-$ zipc -C bin zipc-0.0.1.zip zipc-0.0.1
+$ mkdir -p bin
+
+$ zipc -chdir bin zipc-0.0.1.zip zipc-0.0.1
 
 $ unzip -l bin/zipc-0.0.1.zip
 Archive:  bin/zipc-0.0.1.zip
@@ -14,19 +16,13 @@ Archive:  bin/zipc-0.0.1.zip
   2020040  12-01-2016 22:25   zipc-0.0.1/darwin/386/zipc
 ...
 
-$ zipc -h
-Usage:
-  zipc [-C <chdir>] <archive> <source>...
-  zipc -h --help
-  zipc -v --version
-
-  Arguments:
-    <archive>     Archive output path
-    <source>      A list of files and directories to recursively compress into the archive
-  Options:
-    -C <chdir>    Change the current working directory before compressing files
-    -h --help     Show usage information
-    -v --version  Show version information
+$ zipc -help
+  -chdir string
+        Change the current working directory before compressing files
+  -help
+        Show usage information
+  -version
+        Show version information
 ```
 
 More examples:

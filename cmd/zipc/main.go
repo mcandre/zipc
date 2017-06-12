@@ -2,50 +2,49 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"log"
 	"os"
 
-	"github.com/docopt/docopt-go"
 	"github.com/jhoonb/archivex"
 	"github.com/mcandre/zipc"
 )
 
-// Usage is a docopt-formatted specification of this application's command line interface.
-const Usage = `Usage:
-  zipc [options] <archive> <source>...
-  zipc -h --help
-  zipc -v --version
-
-  Arguments:
-    <archive>     Archive output path
-    <source>      A list of files and directories to recursively compress into the archive
-  Options:
-    -C <chdir>    Change the current working directory before compressing files
-    -h --help     Show usage information
-    -v --version  Show version information`
+var flagDirectory = flag.String("chdir", "", "Change the current working directory before compressing files")
+var flagHelp = flag.Bool("help", false, "Show usage information")
+var flagVersion = flag.Bool("version", false, "Show version information")
 
 // main is the entrypoint for this application.
 func main() {
-	arguments, _ := docopt.Parse(Usage, nil, true, zipc.Version, false)
+	flag.Parse()
 
-	directory, _ := arguments["-C"].(string)
+	switch {
+	case *flagHelp:
+		flag.PrintDefaults()
+		os.Exit(1)
+	case *flagVersion:
+		fmt.Println(zipc.Version)
+		os.Exit(0)
+	}
 
-	if directory != "" {
-		err := os.Chdir(directory)
-
-		if err != nil {
+	if *flagDirectory != "" {
+		if err := os.Chdir(*flagDirectory); err != nil {
 			log.Panic(err)
 		}
 	}
 
-	archivePath, _ := arguments["<archive>"].(string)
+	args := flag.Args()
 
-	sourceRoots, _ := arguments["<source>"].([]string)
+	if len(args) < 2 {
+		log.Panic("An archive path and at least one source path must be supplied, following any named flags")
+	}
+
+	archivePath, sourceRoots := args[0], args[1:]
 
 	archive := new(archivex.ZipFile)
-	err := archive.Create(archivePath)
 
-	if err != nil {
+	if err := archive.Create(archivePath); err != nil {
 		log.Panic(err)
 	}
 
@@ -56,9 +55,7 @@ func main() {
 	}()
 
 	for _, source := range sourceRoots {
-		err := archive.AddAll(source, true)
-
-		if err != nil {
+		if err := archive.AddAll(source, true); err != nil {
 			log.Panic(err)
 		}
 	}

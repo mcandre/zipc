@@ -8,7 +8,7 @@ all: integration-test
 integration-test: port
 
 port: bin
-	zipc -C bin "$(APP)-$(VERSION).zip" "$(APP)-$(VERSION)"
+	zipc -chdir bin "$(APP)-$(VERSION).zip" "$(APP)-$(VERSION)"
 	unzip -l "bin/$(APP)-$(VERSION).zip"
 
 bin:
