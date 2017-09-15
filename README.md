@@ -71,7 +71,7 @@ $ go get github.com/mcandre/zipc/...
 
 ```
 $ mkdir -p $GOPATH/src/github.com/mcandre
-$ git clone git@github.com:mcandre/zipc.git $GOPATH/src/github.com/mcandre/zipc
+$ git clone https://github.com/mcandre/zipc.git $GOPATH/src/github.com/mcandre/zipc
 $ cd $GOPATH/src/github.com/mcandre/zipc
 $ git submodule update --init --recursive
 $ sh -c 'cd cmd/zipc && go install'
