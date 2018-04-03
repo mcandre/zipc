@@ -1,3 +1,6 @@
 [submodule "vendor/github.com/jhoonb/archivex"]
 	path = vendor/github.com/jhoonb/archivex
 	url = https://github.com/jhoonb/archivex.git
+[submodule "vendor/github.com/mcandre/mage-extras"]
+	path = vendor/github.com/mcandre/mage-extras
+	url = https://github.com/mcandre/mage-extras
