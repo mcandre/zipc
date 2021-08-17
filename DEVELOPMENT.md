@@ -5,7 +5,7 @@
 * Go development tools (`sh acquire`)
 * [Docker](https://www.docker.com/) 19+
 
-# INSTALL FROM SOURCE
+# INSTALL
 
 ```console
 $ mage install
