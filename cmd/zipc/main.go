@@ -6,13 +6,11 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"path"
 
-	"github.com/jhoonb/archivex"
 	"github.com/mcandre/zipc"
 )
 
-var flagDirectory = flag.String("chdir", "", "Change the current working directory before compressing files")
+var flagRoot = flag.String("root", "", "Resolve source paths in terms of a top level root directory")
 var flagHelp = flag.Bool("help", false, "Show usage information")
 var flagVersion = flag.Bool("version", false, "Show version information")
 
@@ -35,31 +33,7 @@ func main() {
 		log.Panic("An archive path and at least one source path must be supplied, following any named flags")
 	}
 
-	archivePath, sourceRoots := args[0], args[1:]
-
-	root := *flagDirectory
-
-	if root != "" {
-		for i, sourceRoot := range sourceRoots {
-			sourceRoots[i] = path.Join(root, sourceRoot)
-		}
-	}
-
-	archive := new(archivex.ZipFile)
-
-	if err := archive.Create(archivePath); err != nil {
+	if err := zipc.Compress(args[0], args[1:], *flagRoot); err != nil {
 		log.Panic(err)
-	}
-
-	defer func() {
-		if err := archive.Close(); err != nil {
-			log.Panic(err)
-		}
-	}()
-
-	for _, source := range sourceRoots {
-		if err := archive.AddAll(source, true); err != nil {
-			log.Panic(err)
-		}
 	}
 }

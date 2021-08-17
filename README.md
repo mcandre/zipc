@@ -5,7 +5,7 @@
 ```console
 $ mkdir -p bin
 
-$ zipc -chdir bin bin/zipc-0.0.3.zip zipc-0.0.3
+$ zipc -root bin bin/zipc-0.0.3.zip zipc-0.0.3
 
 $ unzip -l bin/zipc-0.0.3.zip
 Archive:  bin/zipc-0.0.3.zip
@@ -17,8 +17,8 @@ Archive:  bin/zipc-0.0.3.zip
 ...
 
 $ zipc -help
-  -chdir string
-        Change the current working directory before compressing files
+  -root string
+        Resolve source paths in terms of a top level root directory
   -help
         Show usage information
   -version
