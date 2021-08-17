@@ -3,27 +3,21 @@
 # EXAMPLE
 
 ```console
-$ mkdir -p bin
+$ zipc -root example e-e-cummings.zip e-e-cummings
 
-$ zipc -root bin bin/zipc-0.0.3.zip zipc-0.0.3
-
-$ unzip -l bin/zipc-0.0.3.zip
-Archive:  bin/zipc-0.0.3.zip
+$ unzip -l e-e-cummings.zip
+Archive:  e-e-cummings.zip
   Length      Date    Time    Name
 ---------  ---------- -----   ----
-        0  2021-08-17 15:21   zipc-0.0.3/darwin/
-        0  2021-08-17 15:21   zipc-0.0.3/darwin/386/
-  2375508  2021-08-17 15:21   zipc-0.0.3/darwin/386/zipc
+     1208  2021-08-17 15:38   e-e-cummings/anyone-lived-in-a-pretty-how-town.txt
+       34  2021-08-17 15:45   e-e-cummings/l(a.txt
+      601  2021-08-17 15:44   e-e-cummings/you-shall-above-all-things-be-glad-and-young.txt
+---------                     -------
+     1843                     3 files
 ...
-
-$ zipc -help
-  -root string
-        Resolve source paths in terms of a top level root directory
-  -help
-        Show usage information
-  -version
-        Show version information
 ```
+
+See `zipc -help` for more detail.
 
 # DOWNLOAD
 
