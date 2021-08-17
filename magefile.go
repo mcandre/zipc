@@ -5,10 +5,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"path"
 
 	"github.com/magefile/mage/mg"
-	"github.com/mcandre/zipc"
 	"github.com/mcandre/mage-extras"
+	"github.com/mcandre/zipc"
 )
 
 // artifactsPath describes where artifacts are produced.
@@ -47,7 +48,10 @@ var CoverHTML = "cover.html"
 var CoverProfile = "cover.out"
 
 // CoverageHTML generates HTML formatted coverage data.
-func CoverageHTML() error { mg.Deps(CoverageProfile); return mageextras.CoverageHTML(CoverHTML, CoverProfile) }
+func CoverageHTML() error {
+	mg.Deps(CoverageProfile)
+	return mageextras.CoverageHTML(CoverHTML, CoverProfile)
+}
 
 // CoverageProfile generates raw coverage data.
 func CoverageProfile() error { return mageextras.CoverageProfile(CoverProfile) }
@@ -99,7 +103,11 @@ func Goxcart() error {
 }
 
 // Port builds and compresses artifacts.
-func Port() error { mg.Deps(Goxcart); return mageextras.Archive(portBasename, artifactsPath) }
+func Port() error {
+	mg.Deps(Goxcart)
+	archiveFilename := fmt.Sprintf("%s.zip", portBasename)
+	return zipc.Compress(path.Join("bin", archiveFilename), []string{portBasename}, artifactsPath)
+}
 
 // Install builds and installs Go applications.
 func Install() error { return mageextras.Install() }
