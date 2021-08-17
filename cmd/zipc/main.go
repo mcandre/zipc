@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path"
 
 	"github.com/jhoonb/archivex"
 	"github.com/mcandre/zipc"
@@ -28,12 +29,6 @@ func main() {
 		os.Exit(0)
 	}
 
-	if *flagDirectory != "" {
-		if err := os.Chdir(*flagDirectory); err != nil {
-			log.Panic(err)
-		}
-	}
-
 	args := flag.Args()
 
 	if len(args) < 2 {
@@ -41,6 +36,14 @@ func main() {
 	}
 
 	archivePath, sourceRoots := args[0], args[1:]
+
+	root := *flagDirectory
+
+	if root != "" {
+		for i, sourceRoot := range sourceRoots {
+			sourceRoots[i] = path.Join(root, sourceRoot)
+		}
+	}
 
 	archive := new(archivex.ZipFile)
 
