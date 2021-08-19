@@ -3,24 +3,18 @@
 * [Go](https://golang.org/) 1.17+
 * a POSIX compatible shell (e.g., `bash`, `ksh`, `sh`, `zsh`)
 * Go development tools (`sh acquire`)
-* [Docker](https://www.docker.com/) 19+
 
-# INSTALL
+# UNIT TEST
 
 ```console
-$ mage install
+$ go test
 ```
 
-# UNINSTALL
+# COVERAGE
 
 ```console
-$ mage uninstall
-```
-
-# TEST
-
-```console
-$ mage test
+$ mage coverageHTML
+$ karp cover.html
 ```
 
 # LINT
@@ -29,8 +23,8 @@ $ mage test
 $ mage lint
 ```
 
-# PORT
+# CLEAN ALL ARTIFACTS
 
 ```console
-$ mage port
+$ mage clean; mage -clean
 ```
