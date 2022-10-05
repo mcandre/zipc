@@ -9,7 +9,7 @@ import (
 )
 
 // Version is semver.
-const Version = "0.0.5"
+const Version = "0.0.6"
 
 // Compress creates a compressed archive.
 //
