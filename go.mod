@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
 	github.com/magefile/mage v1.11.0
-	github.com/mcandre/mage-extras v0.0.7
+	github.com/mcandre/mage-extras v0.0.8
 )
 
 require github.com/mcandre/factorio v0.0.1 // indirect
