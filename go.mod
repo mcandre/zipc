@@ -1,6 +1,6 @@
 module github.com/mcandre/zipc
 
-go 1.19
+go 1.20
 
 require (
 	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
