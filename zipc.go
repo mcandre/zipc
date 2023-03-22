@@ -8,9 +8,6 @@ import (
 	"github.com/jhoonb/archivex"
 )
 
-// Version is semver.
-const Version = "0.0.6"
-
 // Compress creates a compressed archive.
 //
 // archivePath specifies the target archive
