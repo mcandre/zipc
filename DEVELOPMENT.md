@@ -1,8 +1,11 @@
 # BUILDTIME REQUIREMENTS
 
-* [Go](https://golang.org/) 1.20+ with `go install github.com/mcandre/accio/cmd/accio@v0.0.4` and `accio -install`
-* [Node.js](https://nodejs.org/en) 16.14.2+ with `npm install -g snyk@1.996.0`
+* [Go](https://golang.org/) 1.20+
+* [Node.js](https://nodejs.org/en) 16.14.2+
+* [Rust](https://www.rust-lang.org/en-US/) 1.68.2+
 * [Docker](https://www.docker.com/) 19+
+* a POSIX compliant [make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html) implementation (e.g. GNU make, BSD make, etc.)
+* Provision additional dev tools with `make`
 
 ## Recommended
 
