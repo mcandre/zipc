@@ -33,6 +33,10 @@ https://godoc.org/github.com/mcandre/zipc
 $ go install github.com/mcandre/zipc/cmd/zipc@latest
 ```
 
+# LICENSE
+
+BSD-2-Clause
+
 # RUNTIME REQUIREMENTS
 
 (None)
